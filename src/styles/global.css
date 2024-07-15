@@ -1,0 +1,82 @@
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/* /reset */
+
+html {
+    background-color: rgb(var(--bg-dark));
+    color: var(--white);
+    height: 100%;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    html {
+        background: rgb(var(--bg-dark));
+        color: var(--light-text);
+    }
+}
+
+body {
+    background: var(--bg-dark-gradient);
+    background-repeat: no-repeat;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height: 100%;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    body {
+        background: var(--bg-light-gradient);
+    }
+}
+
+.main-wrapper {
+    margin: auto;
+    padding: 1rem;
+    width: 1400px;
+    max-width: calc(100% - 2rem);
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}
+
+

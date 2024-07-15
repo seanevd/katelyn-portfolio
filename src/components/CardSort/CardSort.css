@@ -1,0 +1,40 @@
+li {
+    list-style: none;
+}
+
+.tags {
+    display: flex;
+    margin-bottom: var(--large-spacing-rem);
+    padding: 0;
+}
+
+.tags li {
+    margin-right: var(--small-spacing-px);
+}
+
+.tags li button {
+    color: var(--white);
+    cursor: pointer;
+    background-color: var(--dark-interactive);
+    border: none;
+    border-radius: var(--standard-spacing-px);
+    padding: 0.25rem var(--standard-spacing-px);
+}
+
+.tags li button.active {
+    background-color: red;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    .tags li button {
+        color: var(--light-text);
+        background-color: var(--light-interactive);
+    }
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+}

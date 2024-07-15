@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_MOTTO } from '../consts';
+import CardSort from '../components/CardSort/CardSort';
+
+---
+
+<Layout title={SITE_MOTTO}>
+	<main class="main-wrapper">
+		<h1 class="title-text">{SITE_MOTTO}</h1>
+		<h3 class="title-2-text">
+			Making the web a better place to be with design systems, 
+			accessibility, and human centered design. Let’s work 
+			together!
+		</h3>
+		<CardSort client:load />
+	</main>
+</Layout>
+
+<style>
+	main {
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		margin-bottom: 0.25em;
+	}
+	h3 {
+		margin-bottom: 2rem;
+		max-width: 760px;
+		width: 100%;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+
+	/* .tags {
+		display: flex;
+		margin-bottom: var(--large-spacing-rem);
+		padding: 0;
+	}
+
+	.tags li {
+		margin-right: var(--small-spacing-px);
+	}
+
+	.tags li button {
+		color: var(--white);
+		cursor: pointer;
+		background-color: var(--dark-interactive);
+		border: none;
+		border-radius: var(--standard-spacing-px);
+		padding: 0.25rem var(--standard-spacing-px);
+	}
+
+	@media screen and (prefers-color-scheme: light) {
+		.tags li button {
+			color: var(--light-text);
+			background-color: var(--light-interactive);
+		}
+	} */
+
+	.link-card-grid li,
+	.tags li {
+		list-style: none;
+	}
+</style>

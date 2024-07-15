@@ -1,0 +1,141 @@
+---
+// import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+
+const { pathname } = Astro.url;
+const aboutHref = '/about';
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = aboutHref === pathname || aboutHref === '/' + subpath?.[0];
+---
+
+<header class="main-wrapper title-2-text">
+	<nav>
+		<div class="title-group">
+			<img src="/kate-profile.png" alt="Profile Picture" class="profile-pic">
+			<h2 class="title-2-text"><a href="/">{SITE_TITLE}</a></h2>
+			<span class="divider">|</span>
+			<div class="internal-links">
+				<a href="/">Resume</a>
+				<a href={aboutHref} class:list={[{ active: isActive }]}>About</a>
+			</div>
+		</div>
+		
+		<div class="right-nav">
+			<div class="contact">
+				<div class="social-links">
+					<a href="https://medium.com/@duncan.katelynj" target="_blank">
+						<span class="sr-only">Read My Articles on Medium</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1043.63 592.71"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M588.67,296.36c0,163.67-131.78,296.35-294.33,296.35S0,460,0,296.36,131.78,0,294.34,0,588.67,132.69,588.67,296.36"/><path d="M911.56,296.36c0,154.06-65.89,279-147.17,279s-147.17-124.94-147.17-279,65.88-279,147.16-279,147.17,124.9,147.17,279"/><path d="M1043.63,296.36c0,138-23.17,249.94-51.76,249.94s-51.75-111.91-51.75-249.94S963.29,46.42,991.87,46.42s51.76,111.9,51.76,249.94"/></g></g></svg>
+					</a>
+					<a href="https://www.linkedin.com/in/duncankatelyn/" target="_blank">
+						<span class="sr-only">Follow Me on LinkedIn</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+					</a>
+				</div>
+				<a href="mailto:duncan.katelynj@gmail.com">duncan.katelynj@gmail.com</a>
+			</div>
+			<div class="location">
+				<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 12.8604C12.55 12.8604 13.0208 12.6645 13.4125 12.2729C13.8042 11.8812 14 11.4104 14 10.8604C14 10.3104 13.8042 9.83952 13.4125 9.44785C13.0208 9.05618 12.55 8.86035 12 8.86035C11.45 8.86035 10.9792 9.05618 10.5875 9.44785C10.1958 9.83952 10 10.3104 10 10.8604C10 11.4104 10.1958 11.8812 10.5875 12.2729C10.9792 12.6645 11.45 12.8604 12 12.8604ZM12 22.8604C9.31667 20.577 7.3125 18.4562 5.9875 16.4979C4.6625 14.5395 4 12.727 4 11.0604C4 8.56035 4.80417 6.56868 6.4125 5.08535C8.02083 3.60202 9.88333 2.86035 12 2.86035C14.1167 2.86035 15.9792 3.60202 17.5875 5.08535C19.1958 6.56868 20 8.56035 20 11.0604C20 12.727 19.3375 14.5395 18.0125 16.4979C16.6875 18.4562 14.6833 20.577 12 22.8604Z" fill="white"/>
+				</svg>
+				<p>San Jose, CA</p>
+			</div>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		background: transparent;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+
+	.profile-pic {
+		width: var(--large-spacing-px);
+	}
+	h2 {
+		margin: 0;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0;
+		color: var(--white);
+		border-bottom: 4px solid transparent;
+		margin-bottom: 0;
+		text-decoration: none;
+	}
+
+	@media screen and (prefers-color-scheme: light) {
+		nav a {
+			color: var(--light-text);
+		}
+	}
+
+	nav .title-group a,
+	.profile-pic,
+	.divider {
+		margin-right: var(--compact-small-spacing-rem);
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+
+	.title-group {
+		display: flex;
+		align-items: center;
+	}
+
+	.right-nav {
+		margin-top: 6px; /* for alignment purposes */
+	}
+
+	.contact {
+		align-items: center;
+		display: flex;
+	}
+
+	.contact a {
+		padding: 0;
+	}
+
+	.social-links {
+		margin-right: var(--compact-small-spacing-rem);
+	}
+
+	.social-links,
+	.social-links a {
+		display: flex;
+	}
+	.social-links a {
+		margin-left: var(--compact-small-spacing-rem);
+		padding: 0;
+		width: 2rem;
+	}
+	.social-links a svg {
+		fill: var(--white);
+	}
+
+	.location {
+		align-items: center;
+		display: flex;
+		justify-content: end;
+	}
+
+	.location svg {
+		margin-right: var(--x-small-spacing-rem);
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
