@@ -27,20 +27,13 @@ p, h1, h2, h3, h4, h5, h6 {
 /* /reset */
 
 html {
-    background-color: rgb(var(--bg-dark));
-    color: var(--white);
+    background-color: rgb(var(--bg-color));
+    color: var(--primary-text);
     height: 100%;
 }
 
-@media screen and (prefers-color-scheme: light) {
-    html {
-        background: rgb(var(--bg-dark));
-        color: var(--light-text);
-    }
-}
-
 body {
-    background: var(--bg-dark-gradient);
+    background: var(--bg-color-gradient);
     background-repeat: no-repeat;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -50,7 +43,7 @@ body {
 
 @media screen and (prefers-color-scheme: light) {
     body {
-        background: var(--bg-light-gradient);
+        background: var(--bg-color-gradient);
     }
 }
 
@@ -79,4 +72,27 @@ body {
 	white-space: nowrap;
 }
 
+
+.social-links {
+    margin-right: var(--compact-small-spacing-rem);
+}
+
+.social-links,
+.social-links a {
+    display: flex;
+}
+
+.social-links a {
+    margin-left: var(--compact-small-spacing-rem);
+    padding: 0;
+    width: 2rem;
+}
+
+.social-links.large a {
+    width: 4rem;
+}
+
+.social-links a svg {
+    fill: var(--primary-text);
+}
 

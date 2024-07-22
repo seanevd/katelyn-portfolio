@@ -30,12 +30,12 @@ import CardSort from '../components/CardSort/CardSort';
 		max-width: 760px;
 		width: 100%;
 	}
-	.link-card-grid {
+	/* .link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
+		gap: var(--standard-spacing-rem);
 		padding: 0;
-	}
+	} */
 
 	/* .tags {
 		display: flex;
@@ -50,7 +50,7 @@ import CardSort from '../components/CardSort/CardSort';
 	.tags li button {
 		color: var(--white);
 		cursor: pointer;
-		background-color: var(--dark-interactive);
+		background-color: var(--interactive-color);
 		border: none;
 		border-radius: var(--standard-spacing-px);
 		padding: 0.25rem var(--standard-spacing-px);
@@ -58,13 +58,13 @@ import CardSort from '../components/CardSort/CardSort';
 
 	@media screen and (prefers-color-scheme: light) {
 		.tags li button {
-			color: var(--light-text);
+			color: var(--primary-text);
 			background-color: var(--light-interactive);
 		}
 	} */
 
-	.link-card-grid li,
+	/* .link-card-grid li,
 	.tags li {
 		list-style: none;
-	}
+	} */
 </style>

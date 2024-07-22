@@ -47,6 +47,7 @@ export default function CardSort() {
                         <Card
                             companyImages={project.data.companyImages}
                             href={`/projects/${project.slug}`}
+                            slug={project.slug}
                             summary={project.data.summary}
                             tags={project.data.tags}
                             title={project.data.title}

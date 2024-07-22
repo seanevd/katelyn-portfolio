@@ -12,24 +12,34 @@
 
     --white: #FFFFFF;
 
-    --bg-dark: 2,74,57;
-    --bg-dark-accent: 0,41,22;
-    --bg-dark-gradient: radial-gradient(
+    --bg-color: 2,74,57;
+    --bg-color-accent: 0,41,22;
+    --bg-color-gradient: radial-gradient(
         at right top,
-        rgb(var(--bg-dark-accent)) 23%,
-        rgb(var(--bg-dark)) 100%);
+        rgb(var(--bg-color-accent)) 20%,
+        rgb(var(--bg-color)) 70%);
 
-    --bg-light: 255,255,255;
-    --bg-light-accent: 235,244,231;
-    --bg-light-gradient: radial-gradient(
-        at right top,
-        rgb(var(--bg-light-accent)) 23%,
-        rgb(var(--bg-light)) 100%);
+    --primary-text: #FFFFFF;
 
-    --dark-interactive: rgba(32, 89, 79, 0.6);
-    --light-interactive: rgba(118, 207, 191, 0.1);
+    --interactive-color: rgba(32, 89, 79, 0.6);
+    --interactive-color-hover: rgba(32, 89, 79, 0.8);
+    --interactive-color-active: rgba(32, 89, 79, 1);
 
-    --light-text: #012A16;
+    @media screen and (prefers-color-scheme: light) {
+        --bg-color: 255,255,255;
+        --bg-color-accent: 235,244,231;
+        --bg-color-gradient: radial-gradient(
+            at right top,
+            rgb(var(--bg-color-accent)) 20%,
+            rgb(var(--bg-color)) 70%);
+
+        --primary-text: #012111;
+
+        --interactive-color: rgba(118, 207, 191, 0.1);
+        --interactive-color-hover: rgba(118, 207, 191, 0.2);
+        --interactive-color-active: rgba(118, 207, 191, 0.3);
+    }
+    
 
 
     /* spacing */
@@ -82,12 +92,66 @@
 
 .mono-medium {
     font-family: "Roboto Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 500;
 }
 
 .mono-bold {
     font-family: "Roboto Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 700;
+    opacity: 0.8;
+}
+
+.responsive-text-large {
+    font-size: 6.5vw;
+    font-weight: 400;
+}
+
+@media (max-width: 1040px) {
+
+    .title-text {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    
+    .title-2-text {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    
+    .title-card-text {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+/*     
+    .body-text {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    
+    .sub-body-text {
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
+    
+    .caption-text {
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+    
+    .mono-medium {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+    
+    .mono-bold {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.875rem;
+        font-weight: 700;
+        opacity: 0.8;
+    } */
+
 }

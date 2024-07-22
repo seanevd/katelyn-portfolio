@@ -6,17 +6,19 @@
     text-decoration: none;
     line-height: 1.4;
     padding: var(--standard-spacing-rem);
-    border-radius: 8px;
-    color: white;
-    background-color: var(--dark-interactive);
+    border-radius: var(--standard-spacing-px);
+    color: var(--primary-text);
+    background-color: var(--interactive-color);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     opacity: 0.8;
 }
 
-@media screen and (prefers-color-scheme: light) {
-    .link-card > a {
-        background-color: var(--light-interactive);
-    }
+.link-card > a:hover {
+    background-color: var(--interactive-color-hover);
+}
+
+.link-card > a:active {
+    background-color: var(--interactive-color-active);
 }
 
 h2 {
@@ -44,7 +46,7 @@ p {
 
 .company-images {
     display: grid;
-    gap: var(--standard-spacing-px);
+    gap: var(--small-spacing-px);
     grid-template-columns: repeat(3, 1fr);
     padding: 0;
     margin-bottom: var(--standard-spacing-rem);;
@@ -54,13 +56,50 @@ p {
     align-items: center;
     aspect-ratio: 1 / 1;
     background-color: var(--white);
-    border-radius: 50%;
+    border-radius: var(--x-small-spacing-px);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
     display: flex;
     justify-content: center;
-    padding: var(--compact-spacing-px);
+    padding: var(--x-small-spacing-px);
 }
 
 .company-images img {
     max-height: 100%;
     max-width: 100%;
+}
+
+.summary-text {
+    margin-bottom: var(--standard-spacing-rem);
+}
+
+.arrow-elem {
+    margin-bottom: var(--large-spacing-rem);
+    transition: width 180ms;
+    width: 20%;
+}
+
+.link-card > a:hover .arrow-elem {
+    width: 30%;
+}
+
+.arrow {
+    border-bottom: 2px solid var(--primary-text);
+    margin: var(--compact-spacing-px) 0;
+    position: relative;
+    width: 100%;
+}
+
+.arrow::after {
+    bottom: 0;
+    border: 2px solid var(--primary-text);
+    border-bottom: none;
+    border-left: none;
+    content: '';
+    height: 13px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    transform: rotate(45deg);
+    width: 13px;
 }
