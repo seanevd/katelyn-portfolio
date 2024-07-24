@@ -15,7 +15,7 @@
     width: 100%;
     height: 2px;
     position: relative;
-    transition: background 10ms 140ms ease;
+    transition: background 0ms 95ms;
     transform: translateY(0);
 }
 

@@ -5,12 +5,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 // import BaseHead from '../components/BaseHead.astro';
 // import Header from '../components/Header.astro';
-// import Footer from '../components/Footer.astro';
+import Footer from '../components/Footer.astro';
 // import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, description, updatedDate, heroImage } = Astro.props;
+const { title, tags, description, heroImage } = Astro.props;
 
 ---
 
@@ -21,30 +21,113 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Header compact />
-		<main>
+		<main class="main-wrapper">
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
 				<div class="prose">
-					<div class="title">
-						<!-- <div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div> -->
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
+                    <div class="article-header">
+                        <div class="title">
+                            <!-- <div class="date">
+                                <FormattedDate date={pubDate} />
+                                {
+                                    updatedDate && (
+                                        <div class="last-updated-on">
+                                            Last updated on <FormattedDate date={updatedDate} />
+                                        </div>
+                                    )
+                                }
+                            </div> -->
+                            <h1 class="title-text">{title}</h1>
+
+                            <ul class="tags">
+                                {tags.map((tag) => (
+                                    <li class="mono-bold">{tag}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <h2 class="description">
+                            {description}
+                        </h2>
+                        <div class="hero-image">
+                            {heroImage && <img src={heroImage} alt="" />}
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <slot />
+                    </div>
 				</div>
 			</article>
 		</main>
-		<!-- <Footer /> -->
+		<Footer />
 	</body>
 </html>
+
+<style>
+    main.main-wrapper {
+        width: 720px;
+    }
+    .article-header {
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: var(--x-small-spacing-rem);
+    }
+    h2 {
+        margin-bottom: var(--standard-spacing-rem);
+    }
+
+    .article-header {
+        margin-bottom: var(--large-spacing-rem);
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--small-spacing-px);
+        justify-content: center;
+        margin-bottom: var(--standard-spacing-rem);
+        padding: 0;
+    }
+
+    .tags li {
+        list-style: none;
+    }
+
+    .tags li::after {
+        content: '|';
+        margin-left: var(--small-spacing-px);
+    }
+
+    .tags li:last-child::after {
+        content: '';
+        margin-left: 0;
+    }
+
+    .hero-image {
+        padding: var(--standard-spacing-px);
+        position: relative;
+    }
+
+    .hero-image::after {
+        background-color: var(--soft-highlight);
+        border-radius: 50%;
+        content: '';
+        filter: blur(128px);
+        height: 80%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 0;
+    }
+
+    .hero-image img {
+        max-height: 400px;
+        object-fit: contain;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+</style>

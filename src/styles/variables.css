@@ -12,8 +12,10 @@
 
     --white: #FFFFFF;
 
-    --bg-color: 2,74,57;
-    --bg-color-accent: 0,41,22;
+    /* --bg-color: 2,74,57; */
+    /* --bg-color-accent: 0,41,22; */
+    --bg-color: 0,41,22;
+    --bg-color-accent: 0,23,12;
     --bg-color-gradient: radial-gradient(
         at right top,
         rgb(var(--bg-color-accent)) 20%,
@@ -21,9 +23,15 @@
 
     --primary-text: #FFFFFF;
 
-    --interactive-color: rgba(32, 89, 79, 0.6);
+    --soft-highlight: rgba(6, 235, 129,0.1);
+
+    /* --interactive-color: rgba(32, 89, 79, 0.6);
     --interactive-color-hover: rgba(32, 89, 79, 0.8);
-    --interactive-color-active: rgba(32, 89, 79, 1);
+    --interactive-color-active: rgba(32, 89, 79, 1); */
+
+    --interactive-color: rgba(2,74,57, 0.6);
+    --interactive-color-hover: rgba(2,74,57, 0.8);
+    --interactive-color-active: rgba(2,74,57, 1);
 
     @media screen and (prefers-color-scheme: light) {
         --bg-color: 255,255,255;
@@ -34,6 +42,8 @@
             rgb(var(--bg-color)) 70%);
 
         --primary-text: #012111;
+
+        --soft-highlight: rgba(255,255,255,0.8);
 
         --interactive-color: rgba(118, 207, 191, 0.1);
         --interactive-color-hover: rgba(118, 207, 191, 0.2);
