@@ -1,10 +1,10 @@
 ---
 title: 'Macrostax'
 description: 'A personalized macro nutrient tracking tool that tells users what, when, and how much to eat'
-order: 4
+order: 5
 summary: 'A personalized macro nutrient tracking tool that tells users what, when, and how much to eat'
 heroImage: '/project-images/macrostax/macroHome1.png'
-tags: ['Product Design', 'User Research', 'Design Systems']
+tags: ['UX Design', 'User Research', 'Product Design', 'Design Systems']
 companyImages: ['macrostax.png']
 ---
 

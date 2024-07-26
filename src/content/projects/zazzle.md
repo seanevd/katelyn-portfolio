@@ -1,7 +1,7 @@
 ---
 title: 'Zazzle: Maker Kits'
 description: 'Lorem ipsum dolor sit amet'
-order: 2
+order: 3
 summary: 'A curated collection of digital assets that users can combine and modify to bring their ideas to life'
 heroImage: '/blog-placeholder-4.jpg'
 tags: ['UX Design', 'Design Leadership', 'Product Design', 'User Research']

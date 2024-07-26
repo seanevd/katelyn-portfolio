@@ -4,13 +4,15 @@ export const SITE_DESCRIPTION = 'I am a product designer with over 7 years of ex
 export const EMAIL_ADDRESS = 'duncan.katelynj@gmail.com'
 
 export const SITE_TAGS = [
+    "Product Design",
+    "UX Design",
     "Design Systems",
     "User Research",
-    "Mentorship",
-    "UX Design",
-    "Product Design",
     "Design Leadership",
-    "Frontend Development"
+    "Mentorship",
+    "Case Study",
+    "Frontend Development",
+    "UI Design"
 ]
 
 export const RESUME_HREF = '/';

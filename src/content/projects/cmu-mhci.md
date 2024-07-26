@@ -1,7 +1,7 @@
 ---
-title: 'CMU MHCI Capstone Program'
+title: 'CMU MHCI Capstone'
 description: 'Lorem ipsum dolor sit amet'
-order: 5
+order: 6
 summary: 'Supporting student teams over three years of CMU MHCI Capstone projects as they explore human centered design for future NASA missions'
 tags: ['Mentorship']
 companyImages: ['hcii.png']

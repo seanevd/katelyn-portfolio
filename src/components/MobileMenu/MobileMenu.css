@@ -83,6 +83,10 @@ aside .contact {
     transform-origin: left;
 }
 
+aside li {
+    list-style: none;
+}
+
 aside a {
     color: var(--primary-text);
     text-decoration: none;
