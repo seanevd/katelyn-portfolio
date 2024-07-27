@@ -68,8 +68,7 @@ const { compact } = Astro.props;
 		margin: 0;
 	}
 
-	h2 a,
-	h2 a.active {
+	h2 a {
 		text-decoration: none;
 	}
 	nav {
@@ -99,8 +98,7 @@ const { compact } = Astro.props;
 		margin-right: var(--compact-small-spacing-rem);
 	}
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+		text-decoration: underline;
 	}
 
 	.title-group {

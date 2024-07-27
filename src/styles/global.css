@@ -96,6 +96,71 @@ body {
     fill: var(--primary-text);
 }
 
+/* global styling */
+
+.article-header {
+    margin-bottom: var(--large-spacing-rem);
+    text-align: center;
+}
+
+.article-header h1 {
+    margin-bottom: var(--x-small-spacing-rem);
+}
+.article-header h2 {
+    margin-bottom: var(--standard-spacing-rem);
+}
+
+.article-header .hero-image {
+    padding: var(--standard-spacing-px);
+    position: relative;
+}
+
+.article-header .hero-image::after {
+    background-color: var(--soft-highlight);
+    border-radius: 50%;
+    content: '';
+    filter: blur(128px);
+    height: 80%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 0;
+}
+
+.article-header .hero-image img {
+    max-height: 400px;
+    object-fit: contain;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.article-header .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--small-spacing-px);
+    justify-content: center;
+    margin-bottom: var(--standard-spacing-rem);
+    padding: 0;
+}
+
+.article-header .tags li {
+    list-style: none;
+}
+
+.article-header .tags li::after {
+    content: '|';
+    margin-left: var(--small-spacing-px);
+}
+
+.article-header .tags li:last-child::after {
+    content: '';
+    margin-left: 0;
+}
+
+
 /* .md styling */
 
 .article-content h3 {

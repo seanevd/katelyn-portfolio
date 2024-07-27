@@ -1,14 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { KATELYN_TAGS } from '../consts';
 
 ---
 
-<Layout title='About me'>
-	<main>
-		<h1>About me</h1>
-		<p>This is the about me page</p>
+<Layout title='About Katelyn' compactHeader>
+	<main class="main-wrapper">
+		<div class="article-header">
+			<div class="title">
+				<h1 class="title-text">Hi 👋 I'm Katelyn</h1>
+
+				<ul class="tags">
+					{KATELYN_TAGS.map((tag) => (
+						<li class="mono-bold">{tag}</li>
+					))}
+				</ul>
+			</div>
+			<div class="hero-image">
+				<img src="/self-portrait.png" alt="Katelyn self portait" />
+			</div>
+		</div>
+		<div class="article-content">
+			<p>
+				I am a product designer with over 8 years of experience designing and building digitally-focused products and services. I am currently researching and designing digital tools to support the Artemis Moon program at NASA Ames Research Center in Mountain View, California.
+			</p>
+
+			<p>
+				I like designing things with people. Not just designing things with people in mind, but designing things WITH people. I like to learn about them and how they address the problems they face. I like to figure out whether and how technology could fit into their lives and make things easier.
+			</p>
+
+			<p>
+				My specialty is UI/UX design, product strategy, user research, and  design systems in both mobile and web-based applications. I value simple interfaces that prioritize accessibility and I strive to methodically  step through problems in order to better understand the why before I get  to the what.
+			</p>
+
+			<p>
+				I like to run and float in pools of water. I bake whenever I can - most often bagels and baguettes. I like to be outside and I like feeling full of GOOD food. I am also raising two incredible humans, an experience that has impacted every part of who I am.
+			</p>
+
+			<p>
+				I am open to full time design work with a human-centered team focused on  exploring tough human challenges. I would love to work with you!
+			</p>
+
+			<p>
+				Reach out –
+				<a href="mailto:duncan.katelynj@gmail.com">
+					duncan.katelynj@gmail.com
+				</a>
+			</p>
+		</div>
 	</main>
 </Layout>
 
 <style>
+	.article-header {
+		margin-bottom: var(--small-spacing-rem);
+	}
+
+	.article-header .hero-image img {
+		max-height: 200px;
+		position: relative;
+	}
+
+	.article-header .hero-image::before {
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+		height: 100%;
+		background-color: white;
+		top: 50%;
+		left: 50%;
+		aspect-ratio: 1 / 1;
+		max-height: 96%;
+		max-width: 96%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+		border: 4px solid rgba(6, 235, 129, 0.6);
+	}
+
+	@media screen and (prefers-color-scheme: light) {
+		.article-header .hero-image::before {
+			display: none;
+		}
+	}
+
+	main.main-wrapper {
+        width: 720px;
+    }
 </style>
