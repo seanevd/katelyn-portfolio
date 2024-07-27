@@ -111,11 +111,34 @@ body {
     margin: 1.25em 0 0.5em;
 }
 
-.article-content p {
+.article-content p,
+.article-content a,
+.article-content figcaption {
     font-size: 1.125rem;
     line-height: 1.5;
     margin: 0 0 1em;
     letter-spacing: -0.003em;
+}
+
+.article-content a {
+    color: var(--primary-text);
+    border-bottom: 3px solid transparent;
+    font-weight: 700;
+    padding: var(--x-small-spacing-rem) 0;
+    text-decoration: none;
+}
+
+.article-content a:hover {
+    border-bottom-color: var(--primary-text);
+}
+
+.article-content a:active {
+    opacity: 0.8;
+}
+
+.article-content a svg {
+    fill: var(--primary-text);
+    vertical-align: middle;
 }
 
 .article-content img {
@@ -123,23 +146,22 @@ body {
     max-width: 100%;
     padding: 2rem;
     background-color: var(--white);
-
-    /* border: thin solid rgba(0,0,0,0.08); */
     border: 4px solid rgba(6, 235, 129, 0.6);
     border-radius: var(--standard-spacing-px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    /* box-shadow: 0 0 20px 4px rgba(6, 235, 129,0.19), 0 0 6px 2px rgba(6, 235, 129,0.23); */
     display: inline-block;
 
     object-fit: contain;
     width: 100%;
 }
 
+.article-content figcaption {
+    font-style: italic;
+    text-align: center;
+}
+
 @media screen and (prefers-color-scheme: light) {
     .article-content img {
-        /* max-height: 480px;
-        max-width: 100%;
-        padding: 2rem; */
         background-color: transparent;
     
         border: none;
