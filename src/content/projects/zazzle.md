@@ -4,7 +4,7 @@ description: 'A curated collection of digital assets that users can combine and 
 order: 3
 summary: 'A curated collection of digital assets that users can combine and modify to bring their ideas to life'
 heroImage: '/project-images/zazzle/zazzleHome.png'
-tags: ['UX Design', 'Product Design', 'Design Leadership',  'User Research']
+tags: ['UX Design', 'Product Design', 'Design Leadership', 'User Research']
 companyImages: ['zazzle.png']
 ---
 

@@ -40,7 +40,7 @@ For three consecutive years, I **have had the privilege of mentoring a team of g
 
 ![Preview of Spark 2022 project image](/project-images/cmu-mhci/cmu-mhci1.png)
 
-A personal communication platform for sparking excitement, conversations, and happy reflections in relationships between Mars and  Earth.
+A personal communication platform for sparking excitement, conversations, and happy reflections in relationships between Mars and Earth.
 
 <a href="https://hcii.cmu.edu/mhci/capstone/2022/nasa/solution-2.html" target="_blank">
     Visit Project Website
@@ -51,7 +51,7 @@ A personal communication platform for sparking excitement, conversations, and ha
 
 ![Preview of Astra 2023 project image](/project-images/cmu-mhci/cmu-mhci2.png)
 
-Automated Spacewalk Task and Route Advisor (ASTRA) gives EVA planners a  tool to efficiently make an optimal decision and the confidence to  clearly advocate their choices. Our system guides EVA planners through  their process by providing automated, optimized paths as a starting  point for path building. ASTRA gives users the ability to compare,  refine, and summarize their path decisions. Through this process, EVA  planners build confidence, crystallize their arguments, and prepare to  advocate their decisions to their peers.
+Automated Spacewalk Task and Route Advisor (ASTRA) gives EVA planners a tool to efficiently make an optimal decision and the confidence to clearly advocate their choices. Our system guides EVA planners through their process by providing automated, optimized paths as a starting point for path building. ASTRA gives users the ability to compare, refine, and summarize their path decisions. Through this process, EVA planners build confidence, crystallize their arguments, and prepare to advocate their decisions to their peers.
 
 <a href="https://hcii.cmu.edu/mhci/capstone/2023/nasa/design.html" target="_blank">
     Visit Project Website
