@@ -3,14 +3,11 @@ import type { CollectionEntry } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-// import BaseHead from '../components/BaseHead.astro';
-// import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-// import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, tags, description, heroImage } = Astro.props;
+const { title, tags, description, heroImage, compactHero } = Astro.props;
 
 ---
 
@@ -34,12 +31,13 @@ const { title, tags, description, heroImage } = Astro.props;
                                 ))}
                             </ul>
                         </div>
-                        <h2 class="description">
+                        {description && <h2 class="description">
                             {description}
-                        </h2>
-                        <div class="hero-image">
-                            {heroImage && <img src={heroImage} alt="" />}
-                        </div>
+                        </h2>}
+                        
+                        {heroImage && <div class=`hero-image ${compactHero && 'compact-hero'}`>
+                            <img src={heroImage} alt="" />
+                        </div>}
                     </div>
                     <div class="article-content">
                         <slot />
@@ -56,12 +54,24 @@ const { title, tags, description, heroImage } = Astro.props;
         width: 720px;
     }
 
-    .hero-image {
+    .article-header {
+        margin-bottom: var(--large-spacing-rem);
+        text-align: center;
+    }
+
+    .article-header h1 {
+        margin-bottom: var(--x-small-spacing-rem);
+    }
+    .article-header h2 {
+        margin-bottom: var(--standard-spacing-rem);
+    }
+
+    .article-header .hero-image {
         padding: var(--standard-spacing-px);
         position: relative;
     }
 
-    .hero-image::after {
+    .article-header .hero-image::after {
         background-color: var(--soft-highlight);
         border-radius: 50%;
         content: '';
@@ -75,12 +85,45 @@ const { title, tags, description, heroImage } = Astro.props;
         z-index: 0;
     }
 
-    .hero-image img {
+    .article-header .hero-image img {
         max-height: 400px;
         object-fit: contain;
         position: relative;
         width: 100%;
         z-index: 1;
     }
+
+    .article-header .compact-hero {
+        padding-bottom: 0;
+    }
+
+
+    .article-header .compact-hero img {
+        max-height: 200px;
+    }
+
+    .article-header .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--small-spacing-px);
+        justify-content: center;
+        margin-bottom: var(--standard-spacing-rem);
+        padding: 0;
+    }
+
+    .article-header .tags li {
+        list-style: none;
+    }
+
+    .article-header .tags li::after {
+        content: '|';
+        margin-left: var(--small-spacing-px);
+    }
+
+    .article-header .tags li:last-child::after {
+        content: '';
+        margin-left: 0;
+    }
+
 
 </style>

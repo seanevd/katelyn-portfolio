@@ -2,7 +2,7 @@ import { SITE_TAGS } from "../../consts";
 import './Card.css'
 
 type CardProps = {
-    companyImages: string[];
+    companyImages: string[] | undefined;
     href: string;
     slug: string;
     summary: string;
@@ -23,7 +23,7 @@ export default function Card({
             <a href={href}>
                 <div className="top">
                     <ul className="company-images">
-                        {companyImages.map((img, i) => (
+                        {companyImages?.map((img, i) => (
                             <li key={i}>
                                 <img
                                     src={`/project-images/${slug}/logos/${img}`}

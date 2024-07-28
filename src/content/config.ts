@@ -6,13 +6,14 @@ const projects = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
-		description: z.string(),
+		description: z.string().optional(),
 		order: z.number(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		summary: z.string(),
 		tags: z.array(z.enum(SITE_TAGS as [string])),
-		companyImages: z.array(z.string()),
+		companyImages: z.array(z.string()).optional(),
+		compactHero: z.boolean().optional()
 	}),
 });
 
