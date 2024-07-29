@@ -52,7 +52,13 @@ body {
     margin: auto;
     padding: 1rem;
     width: 1400px;
-    max-width: calc(100% - 2rem);
+    max-width: 100%;    
+}
+
+@media (min-width: 640px) {
+    .main-wrapper {
+        max-width: calc(100% - 2rem);
+    }
 }
 
 .sr-only {
@@ -125,6 +131,8 @@ body {
     margin: 0 0 1em;
     letter-spacing: -0.003em;
 }
+
+
 
 .article-content a {
     color: var(--primary-text);
