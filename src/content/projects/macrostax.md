@@ -4,7 +4,7 @@ description: 'A personalized macro nutrient tracking tool that tells users what,
 order: 5
 summary: 'A personalized macro nutrient tracking tool that tells users what, when, and how much to eat'
 heroImage: '/project-images/macrostax/macroHome1.png'
-tags: ['UX Design', 'User Research', 'Product Design', 'Design Systems']
+tags: ['UX Design', 'User Research', 'Product Design', 'Design Systems', 'Design Leadership']
 companyImages: ['macrostax.png']
 ---
 
@@ -14,7 +14,7 @@ Over the course of a year, I worked as the lead product designer to execute a vi
 
 #### Problem Space
 
-Nutrition and health related goals are a common pursuit for a lot of people. Often times, food tracking applications focus of caloric deficits meant to support users in reaching physical goals related to weight loss or muscle gain. **The issue with most of these applications and diet methodologies is that the caloric deficit is too high to maintain long-term and is not supportive of sustainable lifestyle shifts.*** Macrostax strives to address this problem by encouraging users to sustain a higher caloric intake over time and **emphasizing balance between three main** macro nutrients: **carbohydrates, proteins, and fats.**
+Nutrition and health related goals are a common pursuit for a lot of people. Often times, food tracking applications focus of caloric deficits meant to support users in reaching physical goals related to weight loss or muscle gain. **The issue with most of these applications and diet methodologies is that the caloric deficit is too high to maintain long-term and is not supportive of sustainable lifestyle shifts.** Macrostax strives to address this problem by encouraging users to sustain a higher caloric intake over time and **emphasizing balance between three main** macro nutrients: **carbohydrates, proteins, and fats.**
 
 #### Challenges
 
