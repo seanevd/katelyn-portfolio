@@ -110,6 +110,10 @@ aside .mono-medium {
     margin-right: var(--small-spacing-rem);
 }
 
+.social-links svg {
+    width: 100%;
+}
+
 @keyframes fadein {
     
     from {
