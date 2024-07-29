@@ -34,6 +34,7 @@ html {
 
 body {
     background: var(--bg-color-gradient);
+    background-color: rgb(var(--bg-color));
     background-repeat: no-repeat;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
