@@ -5,11 +5,18 @@
     --toggle-circle-size: calc(var(--toggle-height) - (var(--xx-small-spacing-px) * 2) - (var(--border-thickness) * 2));
 }
 
+.wrapper {
+    align-items: center;
+    display: flex;
+    margin-bottom: var(--standard-spacing-rem);
+
+}
+
 .theme-toggle-wrapper {
     border: var(--border-thickness) solid var(--primary-text);
     border-radius: 50px;
     height: var(--toggle-height);
-    margin-top: var(--small-spacing-rem);
+    margin-right: var(--x-small-spacing-rem);
     overflow: hidden;
     position: relative;
     width: var(--toggle-width);
@@ -32,6 +39,11 @@
 .theme-toggle-wrapper:has(:focus-visible) {
     outline: dashed;
 }
+
+.theme-toggle-wrapper:has(#theme-toggle:active)::after {
+    background-color: var(--toggle-color-active-solid);
+}
+
 
 .theme-toggle-wrapper:has(#theme-toggle:checked)::after {
     transform: translateX(var(--toggle-height));

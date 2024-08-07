@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { SITE_TAGS } from "../../consts";
+import { MAX_FILTER_ITEMS, SITE_TAGS } from "../../consts";
 import { useState } from "react";
 import './CardSort.css'
 import Card from "../Card/Card";
@@ -30,15 +30,18 @@ export default function CardSort() {
         <div>
             <ul className="tags">
                 {
-                    SITE_TAGS.map((tag, i) => (
-                        <li key={i}>
-                            <button
-                                onClick={() => filterTags(tag)}
-                                className={`sub-body-text ${selectedTags.includes(tag) ? 'active' : ''}`}>
-                                    {tag}
-                            </button>
-                        </li>
-                    ))
+                    SITE_TAGS.map((tag, i) => {
+                        if (i < MAX_FILTER_ITEMS)
+                        return (
+                            <li key={i}>
+                                <button
+                                    onClick={() => filterTags(tag)}
+                                    className={`sub-body-text ${selectedTags.includes(tag) ? 'active' : ''}`}>
+                                        {tag}
+                                </button>
+                            </li>
+                        )
+                    })
                 }
             </ul>
             <ul className="card-grid">

@@ -22,6 +22,8 @@ export const SITE_TAGS = [
     "UI Design"
 ]
 
+export const MAX_FILTER_ITEMS = 6;
+
 export const RESUME_HREF = 'https://drive.google.com/file/d/1z_ywm0lL7TtZsX2dwq2942XwUn_xAN53/view';
 export const ABOUT_HREF = '/about';
 
