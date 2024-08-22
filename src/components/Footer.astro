@@ -1,17 +1,6 @@
 ---
-import { SITE_TITLE, ABOUT_HREF, RESUME_HREF, EMAIL_ADDRESS } from '../consts';
+import { ABOUT_HREF, RESUME_HREF, EMAIL_ADDRESS } from '../consts';
 import ThemeToggle from './ThemeToggle/ThemeToggle';
-
-// interface Props {
-// 	compact?: boolean;
-// }
-
-// const { pathname } = Astro.url;
-// const subpath = pathname.match(/[^\/]+/g);
-// const isActive = ABOUT_HREF === pathname || ABOUT_HREF === '/' + subpath?.[0];
-
-// const { compact } = Astro.props;
-
 ---
 
 <footer>
@@ -84,7 +73,7 @@ import ThemeToggle from './ThemeToggle/ThemeToggle';
     .nav-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--large-spacing-rem);
+        gap: var(--small-spacing-rem) var(--standard-spacing-rem);
         justify-content: space-between;
     }
 

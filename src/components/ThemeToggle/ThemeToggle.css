@@ -9,7 +9,6 @@
     align-items: center;
     display: flex;
     margin-bottom: var(--standard-spacing-rem);
-
 }
 
 .theme-toggle-wrapper {

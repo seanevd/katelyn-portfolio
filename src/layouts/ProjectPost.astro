@@ -1,13 +1,29 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Card from '../components/Card/Card';
+
+
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, tags, description, heroImage, compactHero } = Astro.props;
+const { title, tags, description, heroImage, compactHero, order } = Astro.props;
+
+// find matching projects
+// remove self
+// order results to most important projects
+// only display 4
+const projects = (await getCollection('projects')).filter(project => (
+        project.data.tags.some(projectTag => tags.includes(projectTag))
+    ))
+    .filter(({data}) => order !== data.order)
+    .sort((a, b) => b.data.order - a.data.order)
+    .slice(0, 4);
 
 ---
 
@@ -44,7 +60,25 @@ const { title, tags, description, heroImage, compactHero } = Astro.props;
                     </div>
 				</div>
 			</article>
+
+            {!!projects.length && <div class="related-projects-section">
+                <h2 class="mono-bold">Related Projects</h2>
+                <ul class="related-project-list">
+                    {projects.map(project => (
+                        <li>
+                            <Card
+                                companyImages={project.data.companyImages}
+                                href={`/projects/${project.slug}`}
+                                slug={project.slug}
+                                summary={project.data.summary}
+                                tags={project.data.tags}
+                                title={project.data.title} />
+                        </li>
+                    ))}
+                </ul>
+            </div>}
 		</main>
+        
 		<Footer />
 	</body>
 </html>
@@ -124,6 +158,38 @@ const { title, tags, description, heroImage, compactHero } = Astro.props;
         content: '';
         margin-left: 0;
     }
+
+    .related-projects-section {
+        margin-top: var(--x-large-spacing-rem);
+    }
+
+    .related-projects-section h2 {
+        border-bottom: thin solid var(--primary-text);
+    }
+
+    .related-project-list {
+        display: grid;
+        gap: var(--small-spacing-px);
+        grid-template-columns: 1fr;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .related-project-list li:nth-child(n + 3) {
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .related-project-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .related-project-list li:nth-child(n + 3) {
+            display: block;
+        }
+    }
+
+    
 
 
 </style>

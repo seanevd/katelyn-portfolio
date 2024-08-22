@@ -4,7 +4,7 @@ description: 'Supporting student teams over three years of CMU MHCI Capstone pro
 order: 6
 summary: 'Supporting student teams over three years of CMU MHCI Capstone projects as they explore human centered design for future NASA missions'
 heroImage: '/project-images/cmu-mhci/cmu-mhciHome.png'
-tags: ['Mentorship']
+tags: ['Mentorship', 'Design Leadership']
 companyImages: ['hcii.png']
 compactHero: true
 ---
