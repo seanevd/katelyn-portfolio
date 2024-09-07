@@ -17,12 +17,17 @@ const { title, tags, description, heroImage, compactHero, order } = Astro.props;
 // find matching projects
 // remove self
 // order results to most important projects
+// Count the number of matches in each sub-array
 // only display 4
 const projects = (await getCollection('projects')).filter(project => (
         project.data.tags.some(projectTag => tags.includes(projectTag))
     ))
     .filter(({data}) => order !== data.order)
     .sort((a, b) => b.data.order - a.data.order)
+    .sort((a, b) => {
+        const countMatches = (arr: string[]) => arr.filter(projectTag => tags.includes(projectTag)).length;
+        return countMatches(b.data.tags) - countMatches(a.data.tags); // Sort in descending order
+    })
     .slice(0, 4);
 
 ---

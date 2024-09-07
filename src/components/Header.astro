@@ -17,7 +17,9 @@ const { compact } = Astro.props;
 <header class="main-wrapper title-2-text">
 	<nav>
 		<div class="title-group">
-			<img src="/kate-profile.png" alt="Katelyn's Avatar" class="profile-pic">
+			<a href="/" class="img-link">
+				<img src="/kate-profile.png" alt="Katelyn's Avatar" class="profile-pic">
+			</a>
 			<h2 class="title-2-text"><a href="/">{SITE_TITLE}</a></h2>
 			<span class="divider">|</span>
 			<div class="internal-links">
@@ -93,12 +95,18 @@ const { compact } = Astro.props;
 	}
 
 	nav .title-group a,
-	.profile-pic,
 	.divider {
 		margin-right: var(--compact-small-spacing-rem);
 	}
 	nav a.active {
 		text-decoration: underline;
+	}
+
+	nav a.img-link {
+		margin: 0;
+		border-bottom: 0;
+		margin-right: 0;
+		padding: 0;
 	}
 
 	.title-group {
