@@ -1,5 +1,5 @@
 ---
-title: 'CMU MHCI Capstone'
+title: 'CMU MHCI Capstone Mentor'
 description: 'Supporting student teams over three years of CMU MHCI Capstone projects as they explore human centered design for future NASA missions'
 order: 6
 summary: 'Supporting student teams over three years of CMU MHCI Capstone projects as they explore human centered design for future NASA missions'
