@@ -52,8 +52,6 @@ Significantly improved the visual consistency, usability, and accessibility of t
 
 ### Process
 
-We began **by talking to professionals in the women’s health space.** This, coupled with a survey and extensive secondary research into the current state, enriched our knowledge of the problem space. **We also worked to involve women in the community** through a co-design workshop, speed dating, desirability studies, and user testing.
-
 #### Background Research
 
 In order to get started, we need to identify long term resource availability and measure that against the needs across applications, including components to support the UI and a survey to assess existing knowledge and experience with design systems. **Resourcing and maintenance requirements long term would influence whether we built a custom library from the ground up or used an existing library and customized it to meet our needs.**
